@@ -1,6 +1,6 @@
 # Auto Scope Selectors
 Simple library to simplify making a declaritive set of query selectors to match a page structure.
-Useful for making a 
+Useful for making a concise reusable set of selectors which can be used with libraries such as puppeteer.
 
 ```javascript
 import {makeScopeSelectors, a, t} from './scope-selectors'
