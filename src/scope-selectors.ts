@@ -1,10 +1,11 @@
 export function makeScopeSelectors<T extends object>(selectors:T, scopeKey = '__scope', scopes:string[] = []):T {
+    const object = selectors as any
+    if (object[scopeKey]) {scopes.push(object[scopeKey])}
+
     const selectorsProxy = new Proxy(selectors, {
         get: (target:any, key) => {
             const propertyValue = target[key]
             const isString = typeof propertyValue === 'string'
-
-            if (target[scopeKey]) {scopes.push(target[scopeKey])}
 
             if (key === scopeKey) {return propertyValue}
             if (propertyValue instanceof Object) {return makeScopeSelectors(propertyValue, scopeKey ,scopes)}
@@ -13,8 +14,9 @@ export function makeScopeSelectors<T extends object>(selectors:T, scopeKey = '__
                 const isXPath = (propertyValue as string).startsWith('//')
                 if (isXPath) return propertyValue
 
-                scopes.push(propertyValue)
-                return scopes.join(' ')
+                const scopeValues = scopes.slice()
+                scopeValues.push(propertyValue)
+                return scopeValues.join(' ')
             }
         }
     })
