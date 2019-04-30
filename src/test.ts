@@ -14,6 +14,9 @@ const selectors = makeScopeSelectors({
                 "__scope": ".details",
                 "productId": ".product-id"
             }
+        },
+        "related_articles": {
+            "publisher": ".publisher"
         }
     },
     "about_page": {
@@ -27,3 +30,6 @@ console.log(scope.item_name === '.feeds .item')  // CSS selectors are scoped by 
 console.log(scope.item_size === '.feeds .item-size')
 console.log(scope.details.productId === '.feeds .details .product-id')
 console.log(scope.type === `//a[text()='red']` ) // XPath selectors are literal as they can't be combined with CSS selectors
+
+let scope2 = selectors.home_page.related_articles
+console.log(scope2.publisher === '.publisher')

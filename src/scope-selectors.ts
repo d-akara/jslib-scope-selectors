@@ -8,7 +8,7 @@ export function makeScopeSelectors<T extends object>(selectors:T, scopeKey = '__
             const isString = typeof propertyValue === 'string'
 
             if (key === scopeKey) {return propertyValue}
-            if (propertyValue instanceof Object) {return makeScopeSelectors(propertyValue, scopeKey ,scopes)}
+            if (propertyValue instanceof Object) {return makeScopeSelectors(propertyValue, scopeKey ,scopes.slice())}
 
             if (isString) {
                 const isXPath = (propertyValue as string).startsWith('//')
