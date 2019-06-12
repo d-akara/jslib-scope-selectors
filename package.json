@@ -1,6 +1,6 @@
 {
   "name": "scope-selectors",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Auto Scoped CSS Query Selectors",
   "main": "dist/scope-selectors.js",
   "scripts": {
