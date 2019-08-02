@@ -1,9 +1,9 @@
 {
   "name": "scope-selectors",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Auto Scoped CSS Query Selectors",
-  "homepage": "https://github.com/dakaraphi/scope-selectors",
-  "repository": "dakaraphi/scope-selectors",
+  "homepage": "https://github.com/dakaraphi/jslib-scope-selectors",
+  "repository": "dakaraphi/jslib-scope-selectors",
   "main": "dist/scope-selectors.js",
   "scripts": {
     "test": "node dist/test.js"
